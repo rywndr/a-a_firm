@@ -1,27 +1,139 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About the Firm",
-    "partners": "Our Partners",
-    "practices": "Practice Areas",
-    "contact": "Contact Us"
-  },
-  "home": {
-    "title": "Unlocking potential, safeguarding success",
-    "description": "Providing modern legal solutions for complex challenges."
-  },
-  "about": {
-    "title": "About Our Firm"
-  },
-  "partners": {
-    "title": "Our Partners"
-  },
-  "practices": {
-    "title": "Practice Areas",
-    "description": "Our areas of legal expertise."
-  },
-  "contact": {
-    "title": "Contact Us",
-    "description": "Get in touch with us today."
-  }
+    "navigation": {
+        "home": "Home",
+        "about": "About the Firm",
+        "partners": "Our People",
+        "practices": "Practice Areas & Business Sector",
+        "contact": "Contact Us"
+    },
+    "home": {
+        "title": "Unlocking potential, safeguarding success",
+        "description": "Providing modern legal solutions for complex challenges."
+    },
+    "about": {
+        "title": "About Our Firm",
+        "subtitle": "A Trusted Indonesian Law Firm",
+        "description1": "AUDY & ANTONI Counsellors at Law stands as an autonomous Indonesian Law Firm specializing in a myriad of commercial, business-related affairs and litigation. Our realm is defined by intricate business transactions and formidable disputes. Within our firm, the lawyers are adept at navigating the complexities, seamlessly operating in a global environment. We bring forth a wealth of experience, attuned to the pulse of clients demands.",
+        "description2": "Our lawyers, with their complementary expertise, empower us to deliver a comprehensive legal service, encompassing corporate, securities, and dispute resolution practices. Clients can expect a thorough and integrated solution, as we seamlessly integrate our diverse skills to meet their multifaceted needs."
+    },
+    "partners": {
+        "title": "Our People",
+        "subtitle": "Experienced Legal Professionals",
+        "readProfile": "Read Profile",
+        "backLabel": "← Back to Our People",
+        "educationLabel": "Education",
+        "membershipLabel": "Admission / Membership",
+        "languagesLabel": "Languages",
+        "list": [
+            {
+                "id": "audy-rahmat",
+                "name": "AUDY RAHMAT, S.H.",
+                "title": "Partner",
+                "bio": [
+                    "Audy Rahmat is a Lawyer with decades of experience. He oversees general corporate, the dispute resolution and litigation practice of the firm. His practice focuses on commercial cases typically arising from high-value commercial agreements and transactions",
+                    "Audy has acted at all levels of trial in Indonesian courts including District Courts (for general disputes and criminal litigation), Commercial Courts (for bankruptcy and suspension of payments, Intellectual Property), and Industrial Relations Courts (for employment disputes), defending clients due to criminal proceeding in Police Authority. Representing Indonesian and international clients in cases relating to debt recovery, torts, insolvency, maritime and shipping, insurance, and other business-related contentious matters. He also acted for clients in domestic and international arbitration.",
+                    "Audy also has prestigious experience in the field of insolvency, notably when he was entrusted and appointed by the Commercial Court to serve as the Court-appointed Receiver in the bankruptcy proceedings of PT Prowell Energy Indonesia, one of the largest oil contracting companies in Indonesia.",
+                    "Audy has experiences with high profile cases in special criminal litigation such as money laundering, corruption, and white collar crime when he was lawyer at Elza Syarief Law Office on of the top litigation law firm in Indonesia.",
+                    "Bringing a wealth of expertise and experience to his role. With a focus litigation and alternative dispute resolution, Audy has established himself as a trusted advocate for clients across a wide range of personal and industries, from national to multinational corporations."
+                ],
+                "education": ["Universitas Hasanudin, Bachelor of Law (SH)"],
+                "membership": [
+                    "Indonesian Advocates Association (PERADI)",
+                    "Receiver and Administrator (Asosiasi Kurator dan Pengurus Indonesia - AKPI)"
+                ],
+                "languages": ["Indonesia", "English"]
+            },
+            {
+                "id": "andelton-antoni",
+                "name": "ANDELTON ANTONI, S.H.",
+                "title": "Partner",
+                "bio": [
+                    "Antoni is a Trustworthy Lawyer and Legal Consultant with having many years of practical experience as a corporate lawyer and litigation lawyer on several top tier law firm and leading mining and energy company in Indonesia. Self motivated to consistently provide first-class results in projects with stringent deadlines, he has been assisting numerous local and foreign companies in their investment, corporate activities and litigation disputes in Indonesian court and international arbitration.",
+                    "Antoni has experience handling high-profile and important cases in special criminal litigation such as money laundering, corruption and white collar crime when he was a lawyer at Elza Syarief Law Office, one of the top litigation law firms in Indonesia.",
+                    "Antoni has been successfully involved, assisting and advising as legal counsel or attorney on prestigious projects and litigation process such as :"
+                ],
+                "projects": {
+                    "Legal Corporate": [
+                        "Public Private Partnership (PPP) Project for the Procurement of Gas Infrastructure for 20 MW Mobile Power Plant Flores (Project of PT PLN Gas & Geothermal)",
+                        "Providing legal counsel to the Human Resources Forum regarding labor law matters (Internal Forum for PT Petrosea Tbk (Public company)",
+                        "Involved in assisting and counsel land acquisition and land compensation for mining activities of gold mining companies Nusantara Resources (Australia company) - Indika Energy subsidiary PT Masmindo Dwi Area.",
+                        "Successfully negotiated a cooperation contract with the Luwu Regency Government, for the construction of a mining road from the port to the Awak Mas Gold Project location in South Sulawesi Province."
+                    ],
+                    "Litigation": [
+                        "Managing diverse litigation, representing PT SCG Readymix Indonesia in Default Claim.",
+                        "Representing PT Petrosea Tbk in an Industrial Relation disputes",
+                        "Representing PT Langgam Inti Hibrindo in Bankruptcy and suspension of payments.",
+                        "handling a Tax case post-bankruptcy for ex-PT United Coal Indonesia during Bankruptcy and Suspension of Payment (PKPU)."
+                    ]
+                },
+                "membership": ["Indonesian Advocates Association (PERADI)"],
+                "languages": ["Indonesia", "English"]
+            }
+        ]
+    },
+    "practices": {
+        "title": "Practice Areas & Business Sector",
+        "subtitle": "Comprehensive Legal Expertise",
+        "description": "Our firm delivers strategic legal solutions across a broad spectrum of practice areas and industry sectors, empowering clients to navigate complex regulatory landscapes with confidence.",
+        "areasTitle": "Practice Areas",
+        "areas": [
+            "Corporate (General, Commercial and Transaction)",
+            "Bankruptcy, Insolvency & Restructuring",
+            "Investment",
+            "Merger & Acquisition",
+            "Project, Infrastructure & Construction",
+            "Banking & Finance",
+            "Capital Markets",
+            "Intellectual Property",
+            "Business Competition & Antitrust Compliance",
+            "Tax",
+            "Employment & Industrial Relation",
+            "Arbitration & Alternative Dispute Resolution",
+            "Comercial Litigation",
+            "Criminal Litigation related white collar crime",
+            "Judicial Review"
+        ],
+        "sectorsTitle": "Business Sector",
+        "sectors": [
+            "Mining",
+            "Oil & Gas",
+            "Banking",
+            "Energy & Renewables",
+            "Land & Property",
+            "Food & Beverages",
+            "Shipping",
+            "FMCG",
+            "Insurance",
+            "Agriculture",
+            "Leisure & Hospitality",
+            "Technology",
+            "Forestry",
+            "Healthcare",
+            "Automotive",
+            "Media & Entertainment",
+            "Construction",
+            "Retail",
+            "Private Client"
+        ]
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We're Here to Help",
+        "address": "Jl. Sungai Sambas 3 No.5, RT.4/RW.5, Kramat Pela, Kebayoran. Baru, Jakarta Selatan, Daerah Khusus Jakarta, 12130",
+        "addressLabel": "Office Address",
+        "phone": "+62 21 7228515",
+        "phoneLabel": "Phone",
+        "email": "info@aacounselors.co.id",
+        "emailLabel": "Email",
+        "hours": "Monday – Friday, 09:00 – 17:00 WIB",
+        "hoursLabel": "Office Hours",
+        "formTitle": "Send Us a Message",
+        "formName": "Full Name",
+        "formEmail": "Email Address",
+        "formPhone": "Phone Number",
+        "formSubject": "Subject",
+        "formMessage": "How can we assist you?",
+        "formSubmit": "Submit Inquiry",
+        "mapTitle": "Our Location"
+    }
 }

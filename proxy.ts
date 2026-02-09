@@ -7,35 +7,36 @@ const locales = ["en", "id"];
 const defaultLocale = "en";
 
 function getLocale(request: NextRequest) {
-  const headers = {
-    "accept-language": request.headers.get("accept-language") || "",
-  };
-  const languages = new Negotiator({ headers }).languages();
-  return match(languages, locales, defaultLocale);
+    const headers = {
+        "accept-language": request.headers.get("accept-language") || "",
+    };
+    const languages = new Negotiator({ headers }).languages();
+    return match(languages, locales, defaultLocale);
 }
 
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+    const { pathname } = request.nextUrl;
 
-  // Check if there is any supported locale in the pathname
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-  );
+    // Check if there is any supported locale in the pathname
+    const pathnameHasLocale = locales.some(
+        (locale) =>
+            pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+    );
 
-  if (pathnameHasLocale) return;
+    if (pathnameHasLocale) return;
 
-  // Redirect if there is no locale
-  const locale = getLocale(request);
-  request.nextUrl.pathname = `/${locale}${pathname}`;
+    // Redirect if there is no locale
+    const locale = getLocale(request);
+    request.nextUrl.pathname = `/${locale}${pathname}`;
 
-  // e.g. incoming request is /products
-  // The new URL is now /en/products
-  return NextResponse.redirect(request.nextUrl);
+    // e.g. incoming request is /products
+    // The new URL is now /en/products
+    return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {
-  matcher: [
-    // Skip all internal paths (_next)
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
-  ],
+    matcher: [
+        // Skip all internal paths (_next)
+        "/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)",
+    ],
 };
