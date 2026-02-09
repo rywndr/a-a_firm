@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "home": "Beranda",
+    "about": "Tentang Firma",
+    "partners": "Mitra Kami",
+    "practices": "Area Praktik",
+    "contact": "Hubungi Kami"
+  },
+  "home": {
+    "title": "Unlocking potential, safeguarding success",
+    "description": "Menyediakan solusi hukum modern untuk tantangan yang kompleks."
+  },
+  "about": {
+    "title": "Tentang Firma Kami"
+  },
+  "partners": {
+    "title": "Mitra Kami"
+  },
+  "practices": {
+    "title": "Area Praktik",
+    "description": "Bidang keahlian hukum kami."
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "description": "Hubungi kami."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About the Firm",
+    "partners": "Our Partners",
+    "practices": "Practice Areas",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "title": "Unlocking potential, safeguarding success",
+    "description": "Providing modern legal solutions for complex challenges."
+  },
+  "about": {
+    "title": "About Our Firm"
+  },
+  "partners": {
+    "title": "Our Partners"
+  },
+  "practices": {
+    "title": "Practice Areas",
+    "description": "Our areas of legal expertise."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with us today."
+  }
+}
