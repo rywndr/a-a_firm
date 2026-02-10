@@ -44,19 +44,19 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                 <div className="container mx-auto flex h-20 items-center justify-between px-6 md:px-12">
                     <Link
                         href={`/${lang}`}
-                        className={`relative z-50 flex items-end gap-3 transition-colors duration-300 ${textColorClass}`}
+                        className={`relative z-50 flex items-end gap-2 transition-colors duration-300 md:gap-3 ${textColorClass}`}
                     >
                         {/* a&a logo */}
-                        <span className="font-serif text-2xl font-bold tracking-tight leading-none md:text-3xl">
+                        <span className="font-serif text-xl font-bold tracking-tight leading-none md:text-3xl">
                             A&A
                         </span>
 
-                        {/* firm name and subtitle - hidden on mobile */}
-                        <div className="hidden sm:flex flex-col leading-none pb-0.5">
-                            <span className="font-serif text-sm font-semibold tracking-wide md:text-base">
+                        {/* firm name and subtitle */}
+                        <div className="flex flex-col leading-none pb-0.5">
+                            <span className="font-serif text-xs font-semibold tracking-wide md:text-base">
                                 AUDY & ANTONI
                             </span>
-                            <span className="text-[9px] font-light tracking-[0.15em] opacity-75 md:text-[10px] mt-0.5">
+                            <span className="text-[8px] font-light tracking-[0.12em] opacity-75 md:text-[10px] md:tracking-[0.15em] mt-0.5">
                                 COUNSELLORS AT LAW
                             </span>
                         </div>
