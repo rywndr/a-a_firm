@@ -2,6 +2,7 @@ import { getDictionary } from "../../get-dictionary";
 import Image from "next/image";
 import batikBg from "../../assets/images/batik.jpg";
 import BatikFooter from "../../components/BatikFooter";
+import FadeIn, { FadeInHero } from "../../components/FadeIn";
 
 export default async function Contact({
     params,
@@ -14,8 +15,9 @@ export default async function Contact({
 
     return (
         <div className="min-h-screen">
-            {/* Hero Banner */}
-            <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden">
+            {/* Hero Section */}
+            <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-screen">
+                {/* Background */}
                 <div className="absolute inset-0 -z-10 bg-black">
                     <Image
                         src={batikBg}
@@ -24,257 +26,231 @@ export default async function Contact({
                         className="object-cover opacity-50"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
                 </div>
-                <div className="relative z-10 px-6 pt-20 text-center text-white md:pt-24">
-                    <h1 className="font-serif text-4xl font-semibold leading-tight tracking-tight drop-shadow-2xl sm:text-5xl md:text-6xl lg:text-7xl">
-                        {dict.contact.title}
-                    </h1>
-                    <p className="mx-auto mt-4 max-w-xl text-lg font-light text-white/80 drop-shadow-lg md:mt-6 md:text-xl">
-                        {dict.contact.subtitle}
-                    </p>
-                </div>
-            </section>
 
-            {/* Description & Contact Info Cards */}
-            <section className="container mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {/* Address Card */}
-                    <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                                />
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                                />
-                            </svg>
-                        </div>
-                        <h3 className="mb-2 font-serif text-lg font-bold text-gray-900">
-                            {dict.contact.addressLabel}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-gray-600">
-                            {dict.contact.address}
-                        </p>
-                    </div>
+                <div className="container mx-auto max-w-7xl px-6 md:px-12">
+                    <div className="max-w-4xl pt-32 pb-20">
+                        {/* Top line */}
+                        <FadeInHero delay={0.2} direction="left" distance={50}>
+                            <div className="mb-8 h-px w-full max-w-2xl bg-white/40" />
+                        </FadeInHero>
 
-                    {/* Phone Card */}
-                    <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                                />
-                            </svg>
-                        </div>
-                        <h3 className="mb-2 font-serif text-lg font-bold text-gray-900">
-                            {dict.contact.phoneLabel}
-                        </h3>
-                        <a
-                            href={`tel:${dict.contact.phone.replace(/\s/g, "")}`}
-                            className="text-sm text-gray-600 transition-colors hover:text-gray-900"
-                        >
-                            {dict.contact.phone}
-                        </a>
-                    </div>
+                        {/* Main heading */}
+                        <FadeInHero delay={0.3} duration={0.8}>
+                            <h1 className="font-serif text-5xl font-light leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+                                {dict.contact.title}
+                            </h1>
+                        </FadeInHero>
 
-                    {/* Email Card */}
-                    <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                                />
-                            </svg>
-                        </div>
-                        <h3 className="mb-2 font-serif text-lg font-bold text-gray-900">
-                            {dict.contact.emailLabel}
-                        </h3>
-                        <a
-                            href={`mailto:${dict.contact.email}`}
-                            className="text-sm text-gray-600 transition-colors hover:text-gray-900"
-                        >
-                            {dict.contact.email}
-                        </a>
-                    </div>
+                        {/* Sub */}
+                        <FadeInHero delay={0.5} duration={0.8}>
+                            <p className="mt-6 max-w-xl text-lg font-light italic leading-relaxed text-white/90 md:mt-8 md:text-xl lg:text-2xl">
+                                {dict.contact.subtitle}
+                            </p>
+                        </FadeInHero>
 
-                    {/* Office Hours Card */}
-                    <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                                />
-                            </svg>
-                        </div>
-                        <h3 className="mb-2 font-serif text-lg font-bold text-gray-900">
-                            {dict.contact.hoursLabel}
-                        </h3>
-                        <p className="text-sm text-gray-600">
-                            {dict.contact.hours}
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Form & Map Section */}
-            <section className="border-t border-gray-100 bg-gray-50 mb-4">
-                <div className="container mx-auto max-w-7xl px-6 py-16 md:px-12 md:py-24">
-                    <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-                        {/* Contact Form */}
-                        <div>
-                            <h2 className="mb-2 font-serif text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
-                                {dict.contact.formTitle}
-                            </h2>
-                            <div className="mb-10 h-1 w-16 bg-gray-900" />
-
-                            <form className="space-y-6">
-                                <div className="grid gap-6 sm:grid-cols-2">
-                                    <div>
-                                        <label
-                                            htmlFor="name"
-                                            className="mb-2 block text-sm font-medium text-gray-700"
-                                        >
-                                            {dict.contact.formName}
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            required
-                                            className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label
-                                            htmlFor="email"
-                                            className="mb-2 block text-sm font-medium text-gray-700"
-                                        >
-                                            {dict.contact.formEmail}
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            required
-                                            className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="grid gap-6 sm:grid-cols-2">
-                                    <div>
-                                        <label
-                                            htmlFor="phone"
-                                            className="mb-2 block text-sm font-medium text-gray-700"
-                                        >
-                                            {dict.contact.formPhone}
-                                        </label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label
-                                            htmlFor="subject"
-                                            className="mb-2 block text-sm font-medium text-gray-700"
-                                        >
-                                            {dict.contact.formSubject}
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="subject"
-                                            name="subject"
-                                            required
-                                            className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
-                                        />
-                                    </div>
-                                </div>
-
+                        {/* Contact Info Grid */}
+                        <div className="mt-12 grid gap-8 sm:grid-cols-2 md:mt-16 lg:gap-12">
+                            {/* Phone */}
+                            <FadeInHero delay={0.7} duration={0.8}>
                                 <div>
-                                    <label
-                                        htmlFor="message"
-                                        className="mb-2 block text-sm font-medium text-gray-700"
+                                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
+                                        Contact
+                                    </p>
+                                    <a
+                                        href={`tel:${dict.contact.phone.replace(/\s/g, "")}`}
+                                        className="font-serif text-2xl font-light text-white transition-colors hover:text-white/80 md:text-3xl"
                                     >
-                                        {dict.contact.formMessage}
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows={5}
-                                        required
-                                        className="w-full resize-none rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-gray-900 focus:ring-1 focus:ring-gray-900"
-                                    />
+                                        {dict.contact.phone}
+                                    </a>
                                 </div>
+                            </FadeInHero>
 
-                                <button
-                                    type="submit"
-                                    className="inline-flex h-14 items-center justify-center rounded-full bg-gray-900 px-10 text-base font-semibold text-white transition-transform hover:scale-105 active:scale-95"
-                                >
-                                    {dict.contact.formSubmit}
-                                </button>
-                            </form>
+                            {/* Address */}
+                            <FadeInHero delay={0.8} duration={0.8}>
+                                <div>
+                                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
+                                        {dict.contact.addressLabel}
+                                    </p>
+                                    <address className="not-italic">
+                                        <p className="font-serif text-lg font-light leading-relaxed text-white md:text-xl">
+                                            {dict.contact.address
+                                                .split(",")
+                                                .map(
+                                                    (
+                                                        line: string,
+                                                        index: number,
+                                                    ) => (
+                                                        <span
+                                                            key={index}
+                                                            className="block"
+                                                        >
+                                                            {line.trim()}
+                                                            {index <
+                                                                dict.contact.address.split(
+                                                                    ",",
+                                                                ).length -
+                                                                    1 && ","}
+                                                        </span>
+                                                    ),
+                                                )}
+                                        </p>
+                                    </address>
+                                </div>
+                            </FadeInHero>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Form and Map Section */}
+            <section className="bg-white">
+                <div className="container mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-32">
+                    <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+                        {/* Left Column - Contact Form */}
+                        <div>
+                            <FadeIn direction="left" distance={40}>
+                                <div className="mb-10">
+                                    <h2 className="font-serif text-3xl font-light tracking-tight text-gray-900 md:text-4xl">
+                                        {dict.contact.formTitle}
+                                    </h2>
+                                    <div className="mt-4 h-px w-16 bg-gray-900" />
+                                </div>
+                            </FadeIn>
+
+                            <FadeIn delay={0.1}>
+                                <form className="space-y-8">
+                                    <div className="grid gap-8 sm:grid-cols-2">
+                                        <div className="group">
+                                            <label
+                                                htmlFor="name"
+                                                className="mb-3 block text-sm font-medium uppercase tracking-wider text-gray-500"
+                                            >
+                                                {dict.contact.formName}
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                required
+                                                className="w-full border-0 border-b-2 border-gray-200 bg-transparent px-0 py-3 text-lg text-gray-900 outline-none transition-colors placeholder:text-gray-300 focus:border-gray-900 focus:ring-0"
+                                            />
+                                        </div>
+                                        <div className="group">
+                                            <label
+                                                htmlFor="email"
+                                                className="mb-3 block text-sm font-medium uppercase tracking-wider text-gray-500"
+                                            >
+                                                {dict.contact.formEmail}
+                                            </label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                required
+                                                className="w-full border-0 border-b-2 border-gray-200 bg-transparent px-0 py-3 text-lg text-gray-900 outline-none transition-colors placeholder:text-gray-300 focus:border-gray-900 focus:ring-0"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="grid gap-8 sm:grid-cols-2">
+                                        <div className="group">
+                                            <label
+                                                htmlFor="phone"
+                                                className="mb-3 block text-sm font-medium uppercase tracking-wider text-gray-500"
+                                            >
+                                                {dict.contact.formPhone}
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                id="phone"
+                                                name="phone"
+                                                className="w-full border-0 border-b-2 border-gray-200 bg-transparent px-0 py-3 text-lg text-gray-900 outline-none transition-colors placeholder:text-gray-300 focus:border-gray-900 focus:ring-0"
+                                            />
+                                        </div>
+                                        <div className="group">
+                                            <label
+                                                htmlFor="subject"
+                                                className="mb-3 block text-sm font-medium uppercase tracking-wider text-gray-500"
+                                            >
+                                                {dict.contact.formSubject}
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="subject"
+                                                name="subject"
+                                                required
+                                                className="w-full border-0 border-b-2 border-gray-200 bg-transparent px-0 py-3 text-lg text-gray-900 outline-none transition-colors placeholder:text-gray-300 focus:border-gray-900 focus:ring-0"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="group">
+                                        <label
+                                            htmlFor="message"
+                                            className="mb-3 block text-sm font-medium uppercase tracking-wider text-gray-500"
+                                        >
+                                            {dict.contact.formMessage}
+                                        </label>
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            rows={4}
+                                            required
+                                            className="w-full resize-none border-0 border-b-2 border-gray-200 bg-transparent px-0 py-3 text-lg text-gray-900 outline-none transition-colors placeholder:text-gray-300 focus:border-gray-900 focus:ring-0"
+                                        />
+                                    </div>
+
+                                    <div className="pt-4">
+                                        <button
+                                            type="submit"
+                                            className="group inline-flex items-center gap-3 text-base font-medium uppercase tracking-widest text-gray-900 transition-colors hover:text-gray-600"
+                                        >
+                                            {dict.contact.formSubmit}
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth={1.5}
+                                                stroke="currentColor"
+                                                className="h-5 w-5 transition-transform group-hover:translate-x-1"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </FadeIn>
                         </div>
 
-                        {/* Map */}
+                        {/* Right Column - Map */}
                         <div>
-                            <h2 className="mb-2 font-serif text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
-                                {dict.contact.mapTitle}
-                            </h2>
-                            <div className="mb-10 h-1 w-16 bg-gray-900" />
+                            <FadeIn delay={0.2} direction="right" distance={40}>
+                                <div className="mb-10">
+                                    <h2 className="font-serif text-3xl font-light tracking-tight text-gray-900 md:text-4xl">
+                                        Our Location
+                                    </h2>
+                                    <div className="mt-4 h-px w-16 bg-gray-900" />
+                                </div>
+                            </FadeIn>
 
-                            <div className="h-[460px] w-full overflow-hidden rounded-2xl border border-gray-200 shadow-sm lg:h-full lg:min-h-[500px]">
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src="https://maps.google.com/maps?q=Jl.%20Sungai%20Sambas%203%20No.5,%20RT.4/RW.5,%20Kramat%20Pela,%20Kebayoran.%20Baru,%20Jakarta%20Selatan,%20Daerah%20Khusus%20Jakarta,%2012130&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                    title="Office Location"
-                                    className="h-full w-full"
-                                    loading="lazy"
-                                ></iframe>
-                            </div>
+                            <FadeIn delay={0.3} direction="none">
+                                <div className="aspect-[4/3] w-full overflow-hidden rounded-lg shadow-lg lg:aspect-square">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://maps.google.com/maps?q=Jl.%20Sungai%20Sambas%203%20No.5,%20RT.4/RW.5,%20Kramat%20Pela,%20Kebayoran.%20Baru,%20Jakarta%20Selatan,%20Daerah%20Khusus%20Jakarta,%2012130&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                        title="Office Location"
+                                        className="h-full w-full"
+                                        loading="lazy"
+                                    ></iframe>
+                                </div>
+                            </FadeIn>
                         </div>
                     </div>
                 </div>

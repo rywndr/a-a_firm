@@ -26,6 +26,7 @@ export type Dictionary = {
     about: {
         title: string;
         subtitle: string;
+        sectionLabel: string;
         description1: string;
         description2: string;
     };
@@ -68,5 +69,10 @@ export type Dictionary = {
         formMessage: string;
         formSubmit: string;
         mapTitle: string;
+    };
+    cta: {
+        title: string;
+        description: string;
+        button: string;
     };
 };

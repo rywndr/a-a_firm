@@ -1,8 +1,8 @@
 {
     "navigation": {
         "home": "Beranda",
-        "about": "Tentang Firma",
-        "partners": "Tim Kami",
+        "about": "Firma",
+        "partners": "Tim",
         "practices": "Area Praktik & Sektor Bisnis",
         "contact": "Hubungi Kami"
     },
@@ -13,6 +13,7 @@
     "about": {
         "title": "Tentang Firma Kami",
         "subtitle": "Firma Hukum Indonesia Terpercaya",
+        "sectionLabel": "Identitas Firma",
         "description1": "AUDY & ANTONI, Kantor Hukum yang beroperasi secara mandiri di Indonesia, spesialis dalam berbagai urusan komersial, bisnis, dan litigasi. Bidang keahlian kami mencakup transaksi bisnis yang kompleks dan sengketa yang rumit. Di dalam firma kami, para pengacara terampil dalam menangani kompleksitas tersebut, beroperasi dengan lancar dalam lingkungan global. Kami membawa pengalaman yang luas, selalu responsif terhadap kebutuhan klien.",
         "description2": "Para pengacara kami, dengan keahlian yang saling melengkapi, memungkinkan kami untuk menyediakan layanan hukum yang komprehensif, mencakup praktik hukum korporasi, sekuritas, dan penyelesaian sengketa. Klien dapat mengharapkan solusi yang komprehensif dan terintegrasi, karena kami secara mulus mengintegrasikan keahlian kami yang beragam untuk memenuhi kebutuhan mereka yang kompleks."
     },
@@ -36,7 +37,7 @@
                     "Audy memiliki pengalaman dalam menangani kasus-kasus berprofil tinggi di bidang litigasi pidana khusus, seperti pencucian uang, korupsi, dan kejahatan kerah putih, saat ia bekerja sebagai pengacara di Kantor Hukum Elza Syarief, salah satu firma hukum litigasi terkemuka di Indonesia.",
                     "Membawa keahlian dan pengalaman yang luas ke dalam perannya. Dengan fokus pada litigasi dan penyelesaian sengketa alternatif, Audy telah membuktikan dirinya sebagai advokat yang dapat diandalkan bagi klien dari berbagai latar belakang pribadi dan industri, mulai dari perusahaan nasional hingga korporasi multinasional."
                 ],
-                "education": ["Universitas Hasanudin, Bachelor of Law (SH)"],
+                "education": ["Universitas Hasanuddin, Sarjana Hukum (SH)"],
                 "membership": [
                     "Indonesian Advocates Association (PERADI)",
                     "Receiver and Administrator (Asosiasi Kurator dan Pengurus Indonesia - AKPI)"
@@ -52,6 +53,7 @@
                     "Antoni memiliki pengalaman menangani kasus-kasus berprofil tinggi dan penting dalam litigasi pidana khusus, seperti pencucian uang, korupsi, dan kejahatan kerah putih, saat ia bekerja sebagai pengacara di Kantor Hukum Elza Syarief, salah satu firma hukum litigasi terkemuka di Indonesia.",
                     "Antoni telah berhasil terlibat, memberikan bantuan dan nasihat sebagai penasihat hukum atau pengacara dalam proyek-proyek prestisius dan proses litigasi, seperti:"
                 ],
+                "education": ["Universitas Pelita Harapan, Sarjana Hukum (SH)"],
                 "projects": {
                     "Hukum Korporasi": [
                         "Proyek Kemitraan Pemerintah dan Swasta (KPS) untuk Pengadaan Infrastruktur Gas untuk Pembangkit Listrik Mobile 20 MW di Flores (Proyek PT PLN Gas & Geothermal)",
@@ -112,8 +114,7 @@
             "Automotive",
             "Media & Entertainment",
             "Construction",
-            "Ritel",
-            "Klien Pribadi"
+            "Ritel"
         ]
     },
     "contact": {
@@ -135,5 +136,10 @@
         "formMessage": "Bagaimana kami dapat membantu Anda?",
         "formSubmit": "Kirim Pertanyaan",
         "mapTitle": "Lokasi Kami"
+    },
+    "cta": {
+        "title": "Siap mendiskusikan kebutuhan hukum Anda?",
+        "description": "Tim profesional hukum kami yang berpengalaman siap membantu Anda menghadapi tantangan yang kompleks.",
+        "button": "Hubungi Kami"
     }
 }
