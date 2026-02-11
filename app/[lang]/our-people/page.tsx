@@ -1,17 +1,17 @@
-import { getDictionary } from "../../get-dictionary";
+import { getDictionary } from "@/utils/get-dictionary";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
-import batikBg from "../../assets/images/batik2.png";
-import andeltonImg from "../../assets/images/our-people/andelton-antoni.jpeg";
-import BatikFooter from "../../components/BatikFooter";
+import Image from "next/image";
+import BatikFooter from "@/components/BatikFooter";
 import FadeIn, {
     FadeInHero,
     FadeInStagger,
     FadeInStaggerItem,
-} from "../../components/FadeIn";
+} from "@/components/FadeIn";
+import Cta from "@/components/Cta";
 
-const partnerImages: Record<string, StaticImageData> = {
-    "andelton-antoni": andeltonImg,
+const partnerImages: Record<string, string> = {
+    "andelton-antoni": "/images/profiles/andelton-antoni.webp",
+    "audy-rahmat": "/images/profiles/audy-rahmat.webp",
 };
 
 export default async function Partners({
@@ -30,7 +30,7 @@ export default async function Partners({
                 {/* Background */}
                 <div className="absolute inset-0 -z-10 bg-black">
                     <Image
-                        src={batikBg}
+                        src="/images/backgrounds/batik-team-bg.webp"
                         alt="Batik Background"
                         fill
                         className="object-cover opacity-50"
@@ -76,7 +76,7 @@ export default async function Partners({
                     <FadeIn direction="up" distance={30}>
                         <div className="mb-12 text-center md:mb-20">
                             <h2 className="font-serif text-3xl font-light tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-                                Meet Your Allies
+                                {dict.partners.sectionTitle}
                             </h2>
                             <div className="mx-auto mt-4 h-px w-16 bg-gray-900 md:mt-6" />
                         </div>
@@ -89,8 +89,8 @@ export default async function Partners({
                     >
                         {dict.partners.list.map((partner) => (
                             <FadeInStaggerItem key={partner.id}>
-                                <div className="group relative overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
-                                    <div className="flex flex-col sm:flex-row">
+                                <div className="group relative h-full overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
+                                    <div className="flex h-full flex-col sm:flex-row">
                                         {/* Image Column */}
                                         <div className="relative w-full shrink-0 sm:w-48 md:w-56 lg:w-64">
                                             <div className="relative aspect-[4/5] w-full overflow-hidden sm:absolute sm:inset-0 sm:aspect-auto">
@@ -114,7 +114,7 @@ export default async function Partners({
                                                         </span>
                                                     </div>
                                                 )}
-                                                {/* Oerlay */}
+                                                {/* Overlay */}
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent sm:bg-gradient-to-r" />
                                             </div>
                                         </div>
@@ -122,24 +122,21 @@ export default async function Partners({
                                         {/* Content Column */}
                                         <div className="flex flex-1 flex-col p-6 sm:p-8">
                                             {/* Title Badge */}
-                                            <div className="mb-3">
+                                            <div className="mb-3 h-6">
                                                 <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gray-600">
                                                     {partner.title}
                                                 </span>
                                             </div>
 
-                                            {/* Name */}
-                                            <h3 className="font-serif text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
+                                            <h3 className="h-16 font-serif text-xl font-semibold leading-tight tracking-tight text-gray-900 sm:text-2xl md:h-20 md:text-2xl">
                                                 {partner.name}
                                             </h3>
 
-                                            {/* Bio Excerpt */}
-                                            <p className="mt-4 flex-1 text-sm leading-relaxed text-gray-600 line-clamp-4 sm:text-base">
+                                            <p className="mt-3 h-24 overflow-hidden text-sm leading-relaxed text-gray-600 line-clamp-4 sm:text-base md:h-28">
                                                 {partner.bio[0]}
                                             </p>
 
-                                            {/* View Profile Button */}
-                                            <div className="mt-6">
+                                            <div className="mt-auto pt-4">
                                                 <Link
                                                     href={`/${lang}/our-people/${partner.id}`}
                                                     className="group/btn inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-gray-900 transition-colors hover:text-gray-600"
@@ -169,9 +166,6 @@ export default async function Partners({
                                             </div>
                                         </div>
                                     </div>
-
-                                    {/* Accent line */}
-                                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-gray-900 transition-all duration-500 group-hover:w-full" />
                                 </div>
                             </FadeInStaggerItem>
                         ))}
@@ -179,27 +173,7 @@ export default async function Partners({
                 </div>
             </section>
 
-            {/* Call to Action */}
-            <section className="bg-gray-900">
-                <div className="container mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 md:px-12 md:py-24">
-                    <FadeIn direction="up" distance={30}>
-                        <div className="flex flex-col items-center text-center">
-                            <h3 className="font-serif text-2xl font-light text-white sm:text-3xl md:text-4xl">
-                                {dict.cta.title}
-                            </h3>
-                            <p className="mt-4 max-w-xl text-base text-white/70 sm:text-lg">
-                                {dict.cta.description}
-                            </p>
-                            <Link
-                                href={`/${lang}/contact-us`}
-                                className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-gray-900 transition-transform hover:scale-105 active:scale-95 sm:h-14 sm:px-10 sm:text-base"
-                            >
-                                {dict.cta.button}
-                            </Link>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
+            <Cta lang={lang} dict={dict} />
 
             <BatikFooter />
         </div>

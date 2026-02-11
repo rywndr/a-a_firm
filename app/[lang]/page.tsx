@@ -1,7 +1,8 @@
-import { getDictionary } from "../get-dictionary";
+import { getDictionary } from "@/utils/get-dictionary";
 import Image from "next/image";
-import batikBg from "../assets/images/batik.jpg";
-import { FadeInHero } from "../components/FadeIn";
+import Link from "next/link";
+import { FadeInHero } from "@/components/FadeIn";
+import Footer from "@/components/Footer";
 
 export default async function Home({
     params,
@@ -17,7 +18,7 @@ export default async function Home({
             {/* Batik bg */}
             <div className="absolute inset-0 -z-10 bg-black">
                 <Image
-                    src={batikBg}
+                    src="/images/backgrounds/batik-main-bg.webp"
                     alt="Batik Background"
                     fill
                     className="object-cover opacity-50"
@@ -50,13 +51,13 @@ export default async function Home({
                     {/* CTA */}
                     <FadeInHero delay={0.7} duration={0.8}>
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center md:mt-14">
-                            <a
+                            <Link
                                 className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 text-base font-semibold text-gray-900 transition-transform hover:scale-105 active:scale-95"
                                 href={`/${lang}/contact-us`}
                             >
                                 {dict.navigation.contact}
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 className="group inline-flex h-14 items-center justify-center px-6 text-base font-medium text-white transition-all"
                                 href={`/${lang}/practice-area`}
                             >
@@ -77,7 +78,7 @@ export default async function Home({
                                         d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
                                     />
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
                     </FadeInHero>
                 </div>
@@ -87,10 +88,7 @@ export default async function Home({
             <footer className="relative z-10 pb-8 pt-4">
                 <div className="container mx-auto max-w-7xl px-6 md:px-12">
                     <FadeInHero delay={0.9}>
-                        <p className="text-xs text-white/50">
-                            © {new Date().getFullYear()} A&A Counsellors at
-                            Law. All rights reserved.
-                        </p>
+                        <Footer variant="transparent" />
                     </FadeInHero>
                 </div>
             </footer>

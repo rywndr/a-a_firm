@@ -1,8 +1,7 @@
-import { getDictionary } from "../../get-dictionary";
+import { getDictionary } from "@/utils/get-dictionary";
 import Image from "next/image";
-import batikBg from "../../assets/images/batik.jpg";
-import BatikFooter from "../../components/BatikFooter";
-import FadeIn, { FadeInHero } from "../../components/FadeIn";
+import BatikFooter from "@/components/BatikFooter";
+import FadeIn, { FadeInHero } from "@/components/FadeIn";
 
 export default async function Contact({
     params,
@@ -20,7 +19,7 @@ export default async function Contact({
                 {/* Background */}
                 <div className="absolute inset-0 -z-10 bg-black">
                     <Image
-                        src={batikBg}
+                        src="/images/backgrounds/batik-main-bg.webp"
                         alt="Batik Background"
                         fill
                         className="object-cover opacity-50"

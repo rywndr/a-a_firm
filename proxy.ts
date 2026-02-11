@@ -1,23 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 
 const locales = ["en", "id"];
 const defaultLocale = "en";
-
-function getLocale(request: NextRequest) {
-    const headers = {
-        "accept-language": request.headers.get("accept-language") || "",
-    };
-    const languages = new Negotiator({ headers }).languages();
-    return match(languages, locales, defaultLocale);
-}
 
 export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
     // Check if there is any supported locale in the pathname
+    // revent infinite redirect loops (e.g. /en redirecting to /en/en)
     const pathnameHasLocale = locales.some(
         (locale) =>
             pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
@@ -26,11 +17,10 @@ export function proxy(request: NextRequest) {
     if (pathnameHasLocale) return;
 
     // Redirect if there is no locale
-    const locale = getLocale(request);
+    const locale = defaultLocale;
+
     request.nextUrl.pathname = `/${locale}${pathname}`;
 
-    // e.g. incoming request is /products
-    // The new URL is now /en/products
     return NextResponse.redirect(request.nextUrl);
 }
 

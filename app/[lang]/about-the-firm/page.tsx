@@ -1,10 +1,7 @@
-import { getDictionary } from "../../get-dictionary";
+import { getDictionary } from "@/utils/get-dictionary";
 import Image from "next/image";
-import batikBg from "../../assets/images/batik5.jpg";
-import batikBg2 from "../../assets/images/batik2.png";
-import garudaImg from "../../assets/images/garuda.png";
-import BatikFooter from "../../components/BatikFooter";
-import FadeIn, { FadeInHero } from "../../components/FadeIn";
+import BatikFooter from "@/components/BatikFooter";
+import FadeIn, { FadeInHero } from "@/components/FadeIn";
 
 export default async function About({
     params,
@@ -21,7 +18,7 @@ export default async function About({
             <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-screen">
                 <div className="absolute inset-0 -z-10 bg-black">
                     <Image
-                        src={batikBg}
+                        src="/images/backgrounds/batik-about-bg.webp"
                         alt="Batik Background"
                         fill
                         className="object-cover opacity-50"
@@ -64,7 +61,7 @@ export default async function About({
                 >
                     <div className="w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[550px] opacity-[0.05] md:opacity-[0.06] lg:translate-x-[15%]">
                         <Image
-                            src={garudaImg}
+                            src="/images/backgrounds/garuda.webp"
                             alt=""
                             fill
                             className="object-contain"
@@ -161,7 +158,7 @@ export default async function About({
                                 <div className="relative">
                                     <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-2xl lg:aspect-[4/5]">
                                         <Image
-                                            src={batikBg2}
+                                            src="/images/backgrounds/batik-team-bg.webp"
                                             alt="Batik Pattern"
                                             fill
                                             className="object-cover"

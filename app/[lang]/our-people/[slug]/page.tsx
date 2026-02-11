@@ -1,15 +1,13 @@
-import { getDictionary } from "../../../get-dictionary";
+import { getDictionary } from "@/utils/get-dictionary";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
-import batikBg from "../../../assets/images/batik3.png";
-import garudaImg from "../../../assets/images/garuda.png";
-import andeltonImg from "../../../assets/images/our-people/andelton-antoni.jpeg";
-import BatikFooter from "../../../components/BatikFooter";
-import { FadeInHero } from "../../../components/FadeIn";
+import Image from "next/image";
+import BatikFooter from "@/components/BatikFooter";
+import { FadeInHero } from "@/components/FadeIn";
 
-const partnerImages: Record<string, StaticImageData> = {
-    "andelton-antoni": andeltonImg,
+const partnerImages: Record<string, string> = {
+    "andelton-antoni": "/images/profiles/andelton-antoni.webp",
+    "audy-rahmat": "/images/profiles/audy-rahmat.webp",
 };
 
 export default async function PartnerDetail({
@@ -33,7 +31,7 @@ export default async function PartnerDetail({
             <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden md:min-h-[50vh]">
                 <div className="absolute inset-0 -z-10 bg-black">
                     <Image
-                        src={batikBg}
+                        src="/images/banners/batik-profile-banner.webp"
                         alt="Batik Background"
                         fill
                         className="object-cover opacity-50"
@@ -73,7 +71,7 @@ export default async function PartnerDetail({
                     <div className="fixed inset-0 flex items-center justify-center">
                         <div className="w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] opacity-[0.05] md:opacity-[0.06]">
                             <Image
-                                src={garudaImg}
+                                src="/images/backgrounds/garuda.webp"
                                 alt=""
                                 fill
                                 className="object-contain"

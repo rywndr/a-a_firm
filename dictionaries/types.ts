@@ -42,12 +42,22 @@ export type Dictionary = {
         educationLabel: string;
         membershipLabel: string;
         languagesLabel: string;
+        sectionTitle: string;
         list: Partner[];
     };
     practices: {
         title: string;
         subtitle: string;
         headerText: string;
+        sectors: {
+            label: string;
+            title: string;
+            description: string;
+            list: {
+                name: string;
+                image: string;
+            }[];
+        };
         litigation: {
             title: string;
             areas: {

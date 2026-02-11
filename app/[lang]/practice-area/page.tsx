@@ -1,9 +1,7 @@
-import { getDictionary } from "../../get-dictionary";
+import { getDictionary } from "@/utils/get-dictionary";
 import Image from "next/image";
-import batikBg from "../../assets/images/batik4.jpg";
-import garudaImg from "../../assets/images/garuda.png";
-import BatikFooter from "../../components/BatikFooter";
-import FadeIn, { FadeInHero } from "../../components/FadeIn";
+import BatikFooter from "@/components/BatikFooter";
+import FadeIn, { FadeInHero } from "@/components/FadeIn";
 
 export default async function PracticeArea({
     params,
@@ -20,7 +18,7 @@ export default async function PracticeArea({
             <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-screen">
                 <div className="absolute inset-0 -z-10 bg-black">
                     <Image
-                        src={batikBg}
+                        src="/images/backgrounds/batik-practices-bg.webp"
                         alt="Batik Background"
                         fill
                         className="object-cover opacity-50"
@@ -62,7 +60,7 @@ export default async function PracticeArea({
                 >
                     <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[550px] md:h-[550px] lg:w-[700px] lg:h-[700px] xl:w-[900px] xl:h-[900px] opacity-[0.05] md:opacity-[0.06]">
                         <Image
-                            src={garudaImg}
+                            src="/images/backgrounds/garuda.webp"
                             alt=""
                             fill
                             className="object-contain"
@@ -83,40 +81,6 @@ export default async function PracticeArea({
 
                     {/* Two Column Layout */}
                     <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
-                        {/* Litigation Column */}
-                        <FadeIn delay={0.1} direction="up" distance={40}>
-                            <div>
-                                {/* Column Title */}
-                                <div className="mb-10 border-b-2 border-gray-900 pb-4">
-                                    <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-gray-900">
-                                        {dict.practices.litigation.title}
-                                    </h3>
-                                </div>
-
-                                {/* Practice Areas List */}
-                                <div className="space-y-10">
-                                    {dict.practices.litigation.areas.map(
-                                        (area, index) => (
-                                            <div key={index} className="group">
-                                                <h4 className="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
-                                                    {area.name}
-                                                </h4>
-                                                <p className="text-base leading-relaxed text-gray-600 font-light">
-                                                    {area.description}
-                                                </p>
-                                                {index <
-                                                    dict.practices.litigation
-                                                        .areas.length -
-                                                        1 && (
-                                                    <div className="mt-10 h-px w-full bg-gray-200" />
-                                                )}
-                                            </div>
-                                        ),
-                                    )}
-                                </div>
-                            </div>
-                        </FadeIn>
-
                         {/* Corporate Column */}
                         <FadeIn delay={0.2} direction="up" distance={40}>
                             <div>
@@ -150,7 +114,158 @@ export default async function PracticeArea({
                                 </div>
                             </div>
                         </FadeIn>
+
+                        {/* Litigation Column */}
+                        <FadeIn delay={0.1} direction="up" distance={40}>
+                            <div>
+                                {/* Column Title */}
+                                <div className="mb-10 border-b-2 border-gray-900 pb-4">
+                                    <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-gray-900">
+                                        {dict.practices.litigation.title}
+                                    </h3>
+                                </div>
+
+                                {/* Practice Areas List */}
+                                <div className="space-y-10">
+                                    {dict.practices.litigation.areas.map(
+                                        (area, index) => (
+                                            <div key={index} className="group">
+                                                <h4 className="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
+                                                    {area.name}
+                                                </h4>
+                                                <p className="text-base leading-relaxed text-gray-600 font-light">
+                                                    {area.description}
+                                                </p>
+                                                {index <
+                                                    dict.practices.litigation
+                                                        .areas.length -
+                                                        1 && (
+                                                    <div className="mt-10 h-px w-full bg-gray-200" />
+                                                )}
+                                            </div>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
+                        </FadeIn>
                     </div>
+                </div>
+            </section>
+
+            {/* Business Sectors Section */}
+            <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32">
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 opacity-[0.15] bg-[url('/images/backgrounds/noise.png')] mix-blend-overlay" />
+
+                    <div
+                        className="absolute inset-0 opacity-[0.03]"
+                        style={{
+                            backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
+                            backgroundSize: "80px 80px",
+                        }}
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/80" />
+                </div>
+
+                <div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+                    {/* Section Header */}
+                    <FadeIn direction="up" distance={30}>
+                        <div className="mb-16 text-center md:mb-24">
+                            <p
+                                className="mb-4 text-xs font-bold uppercase tracking-[0.3em]"
+                                style={{ color: "#C8A97E" }}
+                            >
+                                {dict.practices.sectors.label}
+                            </p>
+                            <h2 className="font-serif text-3xl font-light tracking-tight text-white md:text-4xl lg:text-5xl">
+                                {dict.practices.sectors.title}
+                            </h2>
+                            <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[#C8A97E] to-transparent opacity-60" />
+                            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-400 md:text-lg">
+                                {dict.practices.sectors.description}
+                            </p>
+                        </div>
+                    </FadeIn>
+
+                    {/* Sectors Grid */}
+                    <FadeIn delay={0.2} direction="up" distance={40}>
+                        <div className="grid gap-x-12 gap-y-0 md:grid-cols-2 lg:gap-x-24">
+                            {/* Left Column */}
+                            <div className="divide-y divide-white/10 border-t border-b border-white/10 md:border-none">
+                                {dict.practices.sectors.list
+                                    .slice(0, 9)
+                                    .map((sector, index) => (
+                                        <div
+                                            key={index}
+                                            className="group flex items-center gap-5 py-6 transition-all duration-500 hover:px-6 hover:-mx-6 rounded-sm hover:bg-white/[0.02]"
+                                        >
+                                            {/* Sector Image/Icon */}
+                                            {sector.image ? (
+                                                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20 transition-all duration-300 group-hover:ring-[#C8A97E]">
+                                                    <Image
+                                                        src={sector.image}
+                                                        alt={sector.name}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-900 ring-1 ring-white/20 transition-all duration-300 group-hover:bg-[#C8A97E]/10 group-hover:ring-[#C8A97E]">
+                                                    <span className="font-serif text-lg font-light text-neutral-400 transition-colors group-hover:text-[#C8A97E]">
+                                                        {sector.name.charAt(0)}
+                                                    </span>
+                                                </div>
+                                            )}
+
+                                            {/* Sector Name */}
+                                            <div className="flex-1">
+                                                <h4 className="font-serif text-lg tracking-wide text-neutral-300 transition-colors group-hover:text-white">
+                                                    {sector.name}
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    ))}
+                            </div>
+
+                            {/* Right Column */}
+                            <div className="divide-y divide-white/10 border-b border-white/10 md:border-none">
+                                {dict.practices.sectors.list
+                                    .slice(9)
+                                    .map((sector, index) => (
+                                        <div
+                                            key={index}
+                                            className="group flex items-center gap-5 py-6 transition-all duration-500 hover:px-6 hover:-mx-6 rounded-sm hover:bg-white/[0.02]"
+                                        >
+                                            {/* Sector Image/Icon */}
+                                            {sector.image ? (
+                                                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20 transition-all duration-300 group-hover:ring-[#C8A97E]">
+                                                    <Image
+                                                        src={sector.image}
+                                                        alt={sector.name}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-900 ring-1 ring-white/20 transition-all duration-300 group-hover:bg-[#C8A97E]/10 group-hover:ring-[#C8A97E]">
+                                                    <span className="font-serif text-lg font-light text-neutral-400 transition-colors group-hover:text-[#C8A97E]">
+                                                        {sector.name.charAt(0)}
+                                                    </span>
+                                                </div>
+                                            )}
+
+                                            {/* Sector Name */}
+                                            <div className="flex-1">
+                                                <h4 className="font-serif text-lg tracking-wide text-neutral-300 transition-colors group-hover:text-white">
+                                                    {sector.name}
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    ))}
+                            </div>
+                        </div>
+                    </FadeIn>
                 </div>
             </section>
 

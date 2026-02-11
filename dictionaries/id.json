@@ -1,7 +1,7 @@
 {
     "navigation": {
         "home": "Beranda",
-        "about": "Firma",
+        "about": "Tentang Kami",
         "partners": "Tim",
         "practices": "Bidang Praktik",
         "contact": "Hubungi Kami"
@@ -54,10 +54,11 @@
         "educationLabel": "Pendidikan",
         "membershipLabel": "Keanggotaan / Asosiasi",
         "languagesLabel": "Bahasa",
+        "sectionTitle": "Para Advokat Kami",
         "list": [
             {
                 "id": "audy-rahmat",
-                "name": "AUDY RAHMAT, S.H.",
+                "name": "AUDY RAHMAT",
                 "title": "Partner",
                 "bio": [
                     "Audy Rahmat adalah Advokat dengan pengalaman puluhan tahun dalam nasihat korporasi, penyelesaian sengketa, dan litigasi. Ia mengawasi urusan korporasi umum Firma serta praktik penyelesaian sengketa dan litigasi, dengan fokus pada sengketa komersial kompleks yang timbul dari perjanjian komersial bernilai tinggi dan transaksi bisnis.",
@@ -76,11 +77,11 @@
             },
             {
                 "id": "andelton-antoni",
-                "name": "ANDELTON ANTONI, S.H.",
+                "name": "ANDELTON ANTONI",
                 "title": "Partner",
                 "bio": [
                     "Andelton Antoni adalah advokat dan konsultan hukum Indonesia dengan pengalaman luas dalam nasihat korporasi dan litigasi. Ia telah berpraktik di beberapa firma hukum terkemuka dan juga pernah menjabat sebagai penasihat hukum internal di sektor pertambangan dan energi di Indonesia. Latar belakang profesionalnya menggabungkan nasihat transaksional, kepatuhan regulasi, dan penyelesaian sengketa, memungkinkannya memberikan nasihat kepada klien mengenai urusan yang melibatkan pertimbangan komersial dan operasional yang kompleks.",
-                    "Ia secara rutin membantu perusahaan domestik dan asing terkait kegiatan investasi, strukturisasi korporasi, transaksi komersial, dan penyelesaian sengketa di pengadilan Indonesia dan dalam proses arbitrase internasional. Praktiknya mencakup berbagai industri, dengan eksposur khusus pada sektor energi, pertambangan, dan infrastruktur.",
+                    "Ia secara rutin membantu perusahaan domestik dan asing terkait kegiatan investasi, merger dan akuisisi, strukturisasi korporasi, transaksi komersial, dan penyelesaian sengketa di pengadilan Indonesia dan dalam proses arbitrase internasional. Praktiknya mencakup berbagai industri, dengan eksposur khusus pada sektor energi, pertambangan, dan infrastruktur.",
                     "Antoni memiliki pengalaman menangani perkara pidana terkait bisnis yang signifikan, termasuk kasus yang melibatkan pencucian uang, korupsi, dan kejahatan kerah putih, yang diperoleh selama masa kerjanya di firma hukum litigasi terkemuka Indonesia. Ia memberikan nasihat dan mewakili klien dalam proses pidana yang timbul dari kegiatan korporasi dan permasalahan kepatuhan regulasi.",
                     "Dalam pekerjaan korporasi dan terkait proyeknya, Antoni telah memberikan nasihat mengenai proyek kerjasama pemerintah dan badan usaha (KPBU), pengadaan infrastruktur, urusan ketenagakerjaan dan hukum ketenagakerjaan, pembebasan lahan dan kompensasi untuk operasi pertambangan, dan pengaturan kerjasama dengan entitas pemerintah. Pengalamannya mencakup nasihat mengenai kepatuhan regulasi dan pengaturan kontraktual dalam proyek yang melibatkan badan usaha milik negara dan pemerintah daerah.",
                     "Pada sisi sengketa, Antoni telah mewakili klien korporasi dalam berbagai perkara litigasi, termasuk sengketa komersial, sengketa hubungan industrial, kepailitan dan penundaan kewajiban pembayaran utang (PKPU), dan sengketa pajak yang timbul dalam konteks proses insolvensi dan restrukturisasi.",
@@ -96,6 +97,85 @@
         "title": "Bidang Praktik",
         "subtitle": "Keahlian Hukum Komprehensif",
         "headerText": "Kami fokus pada Bidang praktik berikut:",
+        "sectors": {
+            "label": "Sektor Bisnis",
+            "title": "Industri yang Kami Layani",
+            "description": "Keahlian kami mencakup berbagai industri, menyediakan solusi hukum yang disesuaikan untuk tantangan unik setiap sektor.",
+            "list": [
+                {
+                    "name": "Pertambangan",
+                    "image": "/images/business-sectors/mining.webp"
+                },
+                {
+                    "name": "Minyak & Gas",
+                    "image": "/images/business-sectors/oil-gas.webp"
+                },
+                {
+                    "name": "Perbankan",
+                    "image": "/images/business-sectors/banking.webp"
+                },
+                {
+                    "name": "Energi & Energi Terbarukan",
+                    "image": "/images/business-sectors/energy-renewables.webp"
+                },
+                {
+                    "name": "Pertanahan & Properti",
+                    "image": "/images/business-sectors/land-property.webp"
+                },
+                {
+                    "name": "Makanan & Minuman",
+                    "image": "/images/business-sectors/fnb.webp"
+                },
+                {
+                    "name": "Pelayaran",
+                    "image": "/images/business-sectors/shipping.webp"
+                },
+                {
+                    "name": "FMCG",
+                    "image": "/images/business-sectors/fmcg.webp"
+                },
+                {
+                    "name": "Asuransi",
+                    "image": "/images/business-sectors/insurance.webp"
+                },
+                {
+                    "name": "Pertanian",
+                    "image": "/images/business-sectors/agriculture.webp"
+                },
+                {
+                    "name": "Pariwisata & Perhotelan",
+                    "image": "/images/business-sectors/leisure-hospitality.webp"
+                },
+                {
+                    "name": "Teknologi",
+                    "image": "/images/business-sectors/technology.webp"
+                },
+                {
+                    "name": "Kehutanan",
+                    "image": "/images/business-sectors/forestry.webp"
+                },
+                {
+                    "name": "Kesehatan",
+                    "image": "/images/business-sectors/healthcare.webp"
+                },
+                {
+                    "name": "Otomotif",
+                    "image": "/images/business-sectors/automotive.webp"
+                },
+                {
+                    "name": "Media & Hiburan",
+                    "image": "/images/business-sectors/media-entertainment.webp"
+                },
+                {
+                    "name": "Konstruksi",
+                    "image": "/images/business-sectors/construction.webp"
+                },
+                {
+                    "name": "Ritel",
+                    "image": "/images/business-sectors/retail.webp"
+                }
+            ]
+        },
         "litigation": {
             "title": "LITIGASI",
             "areas": [
