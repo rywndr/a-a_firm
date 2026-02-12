@@ -9,6 +9,8 @@ import FadeIn, {
 } from "@/components/FadeIn";
 import Cta from "@/components/Cta";
 
+const CONTENT_BG_IMAGE = "/images/backgrounds/CONTENT-BG-2.webp";
+
 const partnerImages: Record<string, string> = {
     "andelton-antoni": "/images/profiles/andelton-antoni.webp",
     "audy-rahmat": "/images/profiles/audy-rahmat.webp",
@@ -39,29 +41,23 @@ export default async function Partners({
                     <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
                 </div>
 
-                <div className="container mx-auto max-w-7xl px-5 sm:px-6 md:px-12">
-                    <div className="max-w-4xl pt-28 pb-16 sm:pt-32 sm:pb-20">
-                        <FadeInHero delay={0.1} direction="none">
-                            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/60 sm:hidden">
-                                Our People
-                            </p>
-                        </FadeInHero>
-
+                <div className="container mx-auto max-w-7xl px-6 md:px-12">
+                    <div className="max-w-4xl pt-20">
                         {/* Top line */}
                         <FadeInHero delay={0.2} direction="left" distance={50}>
-                            <div className="mb-5 h-px w-12 bg-white/40 sm:mb-8 sm:w-full sm:max-w-2xl" />
+                            <div className="mb-8 h-px w-full max-w-2xl bg-white/40" />
                         </FadeInHero>
 
                         {/* Main heading */}
                         <FadeInHero delay={0.3} duration={0.8}>
-                            <h1 className="font-serif text-[2.75rem] font-light leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+                            <h1 className="font-serif text-5xl font-light leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
                                 {dict.partners.title}
                             </h1>
                         </FadeInHero>
 
                         {/* Sub */}
                         <FadeInHero delay={0.5} duration={0.8}>
-                            <p className="mt-5 max-w-sm text-base font-light italic leading-relaxed text-white/90 sm:mt-8 sm:max-w-xl sm:text-lg md:text-xl lg:text-2xl">
+                            <p className="mt-8 max-w-xl font-serif text-lg font-light italic leading-relaxed text-white/90 md:text-xl lg:text-2xl">
                                 {dict.partners.subtitle}
                             </p>
                         </FadeInHero>
@@ -70,8 +66,25 @@ export default async function Partners({
             </section>
 
             {/* Partners Section */}
-            <section className="bg-gray-50">
-                <div className="container mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 md:px-12 md:py-32">
+            <section
+                className="relative bg-gray-50"
+                style={{ clipPath: "inset(0)" }}
+            >
+                {CONTENT_BG_IMAGE && (
+                    <div
+                        className="fixed inset-0 pointer-events-none z-0"
+                        aria-hidden="true"
+                    >
+                        <Image
+                            src={CONTENT_BG_IMAGE}
+                            alt=""
+                            fill
+                            className="object-cover opacity-[0.08]"
+                        />
+                    </div>
+                )}
+
+                <div className="container relative z-10 mx-auto max-w-7xl px-6 py-16 sm:py-20 md:px-12 md:py-32">
                     {/* Section Header */}
                     <FadeIn direction="up" distance={30}>
                         <div className="mb-12 text-center md:mb-20">
@@ -114,8 +127,6 @@ export default async function Partners({
                                                         </span>
                                                     </div>
                                                 )}
-                                                {/* Overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent sm:bg-gradient-to-r" />
                                             </div>
                                         </div>
 

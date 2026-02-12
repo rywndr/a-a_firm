@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/about-the-firm",
         "/our-people",
         "/practice-area",
+        "/career",
         "/contact-us",
     ];
 

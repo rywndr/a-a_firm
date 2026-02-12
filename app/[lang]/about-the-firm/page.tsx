@@ -3,6 +3,8 @@ import Image from "next/image";
 import BatikFooter from "@/components/BatikFooter";
 import FadeIn, { FadeInHero } from "@/components/FadeIn";
 
+const CONTENT_BG_IMAGE = "/images/backgrounds/CONTENT-BG.webp";
+
 export default async function About({
     params,
 }: {
@@ -55,23 +57,23 @@ export default async function About({
             <section className="relative bg-white [clip-path:inset(0)]">
                 {/* Top border */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-                {/*
-                <div
-                    className="fixed inset-0 pointer-events-none flex items-center lg:justify-start justify-center lg:pl-[calc((100vw-80rem)/2+1.5rem)] md:lg:pl-[calc((100vw-80rem)/2+3rem)]"
-                    aria-hidden="true"
-                >
-                    <div className="w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[550px] lg:h-[550px] opacity-[0.05] md:opacity-[0.06] lg:translate-x-[15%]">
+
+                {/* Background Image Placeholder */}
+                {CONTENT_BG_IMAGE && (
+                    <div
+                        className="fixed inset-0 pointer-events-none z-0"
+                        aria-hidden="true"
+                    >
                         <Image
-                            src="/images/backgrounds/garuda.webp"
+                            src={CONTENT_BG_IMAGE}
                             alt=""
                             fill
-                            className="object-contain"
+                            className="object-cover opacity-[0.03]"
                         />
                     </div>
-                </div>
-                */}
+                )}
 
-                <div className="container relative mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-32">
+                <div className="container relative z-10 mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-32">
                     <div className="grid gap-16 lg:grid-cols-12 lg:gap-20 items-start">
                         {/* Text column */}
                         <div className="lg:col-span-7 space-y-10 relative">

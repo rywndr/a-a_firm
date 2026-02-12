@@ -2,6 +2,7 @@ export type Partner = {
     id: string;
     name: string;
     title: string;
+    email?: string;
     bio: string[];
     education?: string[];
     membership?: string[];
@@ -14,6 +15,7 @@ export type Dictionary = {
         about: string;
         partners: string;
         practices: string;
+        career: string;
         contact: string;
     };
     home: {
@@ -49,6 +51,7 @@ export type Dictionary = {
         title: string;
         subtitle: string;
         headerText: string;
+        learnMore: string;
         sectors: {
             label: string;
             title: string;
@@ -98,5 +101,27 @@ export type Dictionary = {
         title: string;
         description: string;
         button: string;
+    };
+    career: {
+        title: string;
+        subtitle: string;
+        headerText: string;
+        description: string;
+        whyJoinTitle: string;
+        whyJoinItems: string[];
+        requirementsTitle: string;
+        requirementsItems: string[];
+        applyTitle: string;
+        applyDescription: string;
+        emailLabel: string;
+        email: string;
+        formTitle: string;
+        formName: string;
+        formEmail: string;
+        formPhone: string;
+        formPosition: string;
+        formMessage: string;
+        formSubmit: string;
+        positionOptions: string[];
     };
 };

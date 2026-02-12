@@ -2,6 +2,7 @@ import { getDictionary } from "@/utils/get-dictionary";
 import Image from "next/image";
 import BatikFooter from "@/components/BatikFooter";
 import FadeIn, { FadeInHero } from "@/components/FadeIn";
+import PracticeAreaClient from "@/components/PracticeAreaClient";
 
 export default async function PracticeArea({
     params,
@@ -49,110 +50,16 @@ export default async function PracticeArea({
                 </div>
             </section>
 
-            {/* Content Section */}
-            <section
-                className="relative bg-white"
-                style={{ clipPath: "inset(0)" }}
-            >
-                {/*
-                <div
-                    className="fixed inset-0 pointer-events-none flex items-center justify-center z-0"
-                    aria-hidden="true"
-                >
-                    <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[550px] md:h-[550px] lg:w-[700px] lg:h-[700px] xl:w-[900px] xl:h-[900px] opacity-[0.05] md:opacity-[0.06]">
-                        <Image
-                            src="/images/backgrounds/garuda.webp"
-                            alt=""
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-                </div>
-              */}
-
-                <div className="container relative z-10 mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-32">
-                    {/* Header Text */}
-                    <FadeIn>
-                        <div className="mb-16 md:mb-24">
-                            <h2 className="font-serif text-3xl font-light leading-relaxed text-gray-900 md:text-4xl lg:text-5xl">
-                                {dict.practices.headerText}
-                            </h2>
-                            <div className="mt-6 h-px w-32 bg-gray-900" />
-                        </div>
-                    </FadeIn>
-
-                    {/* Two Column Layout */}
-                    <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
-                        {/* Corporate Column */}
-                        <FadeIn delay={0.2} direction="up" distance={40}>
-                            <div>
-                                {/* Column Title */}
-                                <div className="mb-10 border-b-2 border-gray-900 pb-4">
-                                    <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-gray-900">
-                                        {dict.practices.corporate.title}
-                                    </h3>
-                                </div>
-
-                                {/* Practice Areas List */}
-                                <div className="space-y-10">
-                                    {dict.practices.corporate.areas.map(
-                                        (area, index) => (
-                                            <div key={index} className="group">
-                                                <h4 className="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
-                                                    {area.name}
-                                                </h4>
-                                                <p className="text-base leading-relaxed text-gray-600 font-light">
-                                                    {area.description}
-                                                </p>
-                                                {index <
-                                                    dict.practices.corporate
-                                                        .areas.length -
-                                                        1 && (
-                                                    <div className="mt-10 h-px w-full bg-gray-200" />
-                                                )}
-                                            </div>
-                                        ),
-                                    )}
-                                </div>
-                            </div>
-                        </FadeIn>
-
-                        {/* Litigation Column */}
-                        <FadeIn delay={0.1} direction="up" distance={40}>
-                            <div>
-                                {/* Column Title */}
-                                <div className="mb-10 border-b-2 border-gray-900 pb-4">
-                                    <h3 className="text-sm font-bold uppercase tracking-[0.25em] text-gray-900">
-                                        {dict.practices.litigation.title}
-                                    </h3>
-                                </div>
-
-                                {/* Practice Areas List */}
-                                <div className="space-y-10">
-                                    {dict.practices.litigation.areas.map(
-                                        (area, index) => (
-                                            <div key={index} className="group">
-                                                <h4 className="mb-3 text-lg font-semibold text-gray-900 md:text-xl">
-                                                    {area.name}
-                                                </h4>
-                                                <p className="text-base leading-relaxed text-gray-600 font-light">
-                                                    {area.description}
-                                                </p>
-                                                {index <
-                                                    dict.practices.litigation
-                                                        .areas.length -
-                                                        1 && (
-                                                    <div className="mt-10 h-px w-full bg-gray-200" />
-                                                )}
-                                            </div>
-                                        ),
-                                    )}
-                                </div>
-                            </div>
-                        </FadeIn>
-                    </div>
-                </div>
-            </section>
+            {/* Practice Areas */}
+            <PracticeAreaClient
+                headerText={dict.practices.headerText}
+                corporateTitle={dict.practices.corporate.title}
+                corporateAreas={dict.practices.corporate.areas}
+                litigationTitle={dict.practices.litigation.title}
+                litigationAreas={dict.practices.litigation.areas}
+                learnMoreText={dict.practices.learnMore}
+                contentBgImage="/images/backgrounds/CONTENT-BG-3.webp"
+            />
 
             {/* Business Sectors Section */}
             <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-32">

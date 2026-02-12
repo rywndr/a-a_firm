@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,6 +18,30 @@ type SidebarProps = {
 export default function Sidebar({ isOpen, onClose, lang, dict }: SidebarProps) {
     const pathname = usePathname();
 
+    // Esc to close
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape" && isOpen) {
+                onClose();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [isOpen, onClose]);
+
+    // Prevent body scroll when sidebar is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isOpen]);
+
     // Helper to switch lang while keeping path
     const switchLang = (targetLang: "en" | "id") => {
         if (!pathname) return `/${targetLang}`;
@@ -29,6 +54,7 @@ export default function Sidebar({ isOpen, onClose, lang, dict }: SidebarProps) {
         { label: dict.navigation.about, href: `/${lang}/about-the-firm` },
         { label: dict.navigation.partners, href: `/${lang}/our-people` },
         { label: dict.navigation.practices, href: `/${lang}/practice-area` },
+        { label: dict.navigation.career, href: `/${lang}/career` },
         { label: dict.navigation.contact, href: `/${lang}/contact-us` },
     ];
 
@@ -84,9 +110,6 @@ export default function Sidebar({ isOpen, onClose, lang, dict }: SidebarProps) {
                                     className="group flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-gray-500 transition-colors hover:text-gray-900"
                                 >
                                     <span>Close</span>
-                                    <span className="inline-block transition-transform group-hover:rotate-90">
-                                        ×
-                                    </span>
                                 </button>
                             </div>
 
@@ -100,7 +123,7 @@ export default function Sidebar({ isOpen, onClose, lang, dict }: SidebarProps) {
                                             onClick={onClose}
                                             className="group block"
                                         >
-                                            <div className="flex items-baseline gap-4 py-3 transition-all">
+                                            <div className="flex items-center gap-4 py-3 transition-all">
                                                 <span
                                                     className={`text-2xl font-light tracking-tight transition-colors md:text-3xl ${
                                                         isActive(item.href)
@@ -111,7 +134,7 @@ export default function Sidebar({ isOpen, onClose, lang, dict }: SidebarProps) {
                                                     {item.label}
                                                 </span>
                                                 {isActive(item.href) && (
-                                                    <span className="h-px flex-1 bg-gray-900" />
+                                                    <span className="h-px w-8 shrink-0 bg-gray-900 md:w-12" />
                                                 )}
                                             </div>
                                         </Link>
