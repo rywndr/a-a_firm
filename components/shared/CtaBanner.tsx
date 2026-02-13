@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FadeIn from "@/components/FadeIn";
+import FadeIn from "@/components/shared/FadeIn";
 import type { Dictionary } from "@/dictionaries/types";
 
 type CtaProps = {
@@ -12,7 +12,6 @@ export default async function Cta({ lang, dict }: CtaProps) {
         <section className="relative overflow-hidden bg-[#0A0A0A]">
             {/* Background pattern */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 opacity-[0.15] bg-[url('/images/backgrounds/noise.png')] mix-blend-overlay" />
                 <div
                     className="absolute inset-0 opacity-[0.03]"
                     style={{
@@ -35,7 +34,7 @@ export default async function Cta({ lang, dict }: CtaProps) {
 
                         <Link
                             href={`/${lang}/contact-us`}
-                            className="mt-10 inline-flex h-14 items-center justify-center rounded-full bg-white px-10 text-base font-semibold text-gray-900 transition-transform hover:scale-105 active:scale-95"
+                            className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-gray-900 transition-transform hover:scale-105 active:scale-95 sm:h-14 sm:px-10 sm:text-base md:mt-10"
                         >
                             {dict.cta.button}
                         </Link>

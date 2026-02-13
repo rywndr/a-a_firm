@@ -2,21 +2,17 @@ import { getDictionary } from "@/utils/get-dictionary";
 import { getCanonicalUrl } from "@/utils/canonical";
 import Link from "next/link";
 import Image from "next/image";
-import BatikFooter from "@/components/BatikFooter";
+import BatikFooter from "@/components/layout/BatikFooter";
 import FadeIn, {
-    FadeInHero,
     FadeInStagger,
     FadeInStaggerItem,
-} from "@/components/FadeIn";
-import Cta from "@/components/Cta";
+} from "@/components/shared/FadeIn";
+import CtaBanner from "@/components/shared/CtaBanner";
+import PageHero from "@/components/hero/PageHero";
+import PartnerImage from "@/components/shared/PartnerImage";
 import type { Metadata } from "next";
 
 const CONTENT_BG_IMAGE = "/images/backgrounds/CONTENT-BG-2.webp";
-
-const partnerImages: Record<string, string> = {
-    "andelton-antoni": "/images/profiles/andelton-antoni.webp",
-    "audy-rahmat": "/images/profiles/audy-rahmat.webp",
-};
 
 export async function generateMetadata({
     params,
@@ -44,43 +40,11 @@ export default async function Partners({
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section */}
-            <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-screen">
-                {/* Background */}
-                <div className="absolute inset-0 -z-10 bg-black">
-                    <Image
-                        src="/images/backgrounds/batik-team-bg.webp"
-                        alt="Batik Background"
-                        fill
-                        className="object-cover opacity-50"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
-                </div>
-
-                <div className="container mx-auto max-w-7xl px-6 md:px-12">
-                    <div className="max-w-4xl pt-20">
-                        {/* Top line */}
-                        <FadeInHero delay={0.2} direction="left" distance={50}>
-                            <div className="mb-8 h-px w-full max-w-2xl bg-white/40" />
-                        </FadeInHero>
-
-                        {/* Main heading */}
-                        <FadeInHero delay={0.3} duration={0.8}>
-                            <h1 className="font-serif text-5xl font-light leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-                                {dict.partners.title}
-                            </h1>
-                        </FadeInHero>
-
-                        {/* Sub */}
-                        <FadeInHero delay={0.5} duration={0.8}>
-                            <p className="mt-8 max-w-xl font-serif text-lg font-light italic leading-relaxed text-white/90 md:text-xl lg:text-2xl">
-                                {dict.partners.subtitle}
-                            </p>
-                        </FadeInHero>
-                    </div>
-                </div>
-            </section>
+            <PageHero
+                backgroundImage="/images/backgrounds/batik-team-bg.webp"
+                title={dict.partners.title}
+                subtitle={dict.partners.subtitle}
+            />
 
             {/* Partners Section */}
             <section
@@ -122,26 +86,11 @@ export default async function Partners({
                                         href={`/${lang}/our-people/${partner.id}`}
                                         className="relative aspect-[3/4] w-full shrink-0 overflow-hidden bg-gray-100 sm:w-64 md:w-72 lg:w-80"
                                     >
-                                        {partnerImages[partner.id] ? (
-                                            <>
-                                                <Image
-                                                    src={
-                                                        partnerImages[
-                                                            partner.id
-                                                        ]
-                                                    }
-                                                    alt={partner.name}
-                                                    fill
-                                                    className="object-cover object-top"
-                                                />
-                                            </>
-                                        ) : (
-                                            <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-                                                <span className="font-serif text-6xl font-light">
-                                                    {partner.name.charAt(0)}
-                                                </span>
-                                            </div>
-                                        )}
+                                        <PartnerImage
+                                            partnerId={partner.id}
+                                            partnerName={partner.name}
+                                            variant="list"
+                                        />
                                     </Link>
 
                                     {/* Content Column */}
@@ -199,7 +148,7 @@ export default async function Partners({
                 </div>
             </section>
 
-            <Cta lang={lang} dict={dict} />
+            <CtaBanner lang={lang} dict={dict} />
 
             <BatikFooter />
         </div>

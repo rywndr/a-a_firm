@@ -56,10 +56,7 @@ export type Dictionary = {
             label: string;
             title: string;
             description: string;
-            list: {
-                name: string;
-                image: string;
-            }[];
+            list: string[];
         };
         litigation: {
             title: string;

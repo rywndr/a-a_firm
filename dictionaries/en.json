@@ -108,78 +108,24 @@
             "title": "Business Sectors",
             "description": "Our expertise spans across diverse industries, providing tailored legal solutions for each sector's unique challenges.",
             "list": [
-                {
-                    "name": "Mining",
-                    "image": "/images/business-sectors/mining.webp"
-                },
-                {
-                    "name": "Oil & Gas",
-                    "image": "/images/business-sectors/oil-gas.webp"
-                },
-                {
-                    "name": "Banking",
-                    "image": "/images/business-sectors/banking.webp"
-                },
-                {
-                    "name": "Energy & Renewables",
-                    "image": "/images/business-sectors/energy-renewables.webp"
-                },
-                {
-                    "name": "Land & Property",
-                    "image": "/images/business-sectors/land-property.webp"
-                },
-                {
-                    "name": "Food & Beverages",
-                    "image": "/images/business-sectors/fnb.webp"
-                },
-                {
-                    "name": "Shipping",
-                    "image": "/images/business-sectors/shipping.webp"
-                },
-                {
-                    "name": "FMCG",
-                    "image": "/images/business-sectors/fmcg.webp"
-                },
-                {
-                    "name": "Insurance",
-                    "image": "/images/business-sectors/insurance.webp"
-                },
-                {
-                    "name": "Agriculture",
-                    "image": "/images/business-sectors/agriculture.webp"
-                },
-                {
-                    "name": "Leisure & Hospitality",
-                    "image": "/images/business-sectors/leisure-hospitality.webp"
-                },
-                {
-                    "name": "Technology",
-                    "image": "/images/business-sectors/technology.webp"
-                },
-                {
-                    "name": "Forestry",
-                    "image": "/images/business-sectors/forestry.webp"
-                },
-                {
-                    "name": "Healthcare",
-                    "image": "/images/business-sectors/healthcare.webp"
-                },
-                {
-                    "name": "Automotive",
-                    "image": "/images/business-sectors/automotive.webp"
-                },
-                {
-                    "name": "Media & Entertainment",
-                    "image": "/images/business-sectors/media-entertainment.webp"
-                },
-                {
-                    "name": "Construction",
-                    "image": "/images/business-sectors/construction.webp"
-                },
-                {
-                    "name": "Retail",
-                    "image": "/images/business-sectors/retail.webp"
-                }
+                "Mining",
+                "Oil & Gas",
+                "Banking",
+                "Energy & Renewables",
+                "Land & Property",
+                "Food & Beverages",
+                "Shipping",
+                "FMCG",
+                "Insurance",
+                "Agriculture",
+                "Leisure & Hospitality",
+                "Technology",
+                "Forestry",
+                "Healthcare",
+                "Automotive",
+                "Media & Entertainment",
+                "Construction",
+                "Retail"
             ]
         },
         "litigation": {

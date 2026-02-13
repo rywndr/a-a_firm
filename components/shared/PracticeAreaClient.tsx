@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import FadeIn from "@/components/FadeIn";
-import PracticeDetailSidebar from "@/components/PracticeDetailSidebar";
+import FadeIn from "@/components/shared/FadeIn";
+import PracticeDetailSidebar from "@/components/shared/PracticeDetailSidebar";
 
 type PracticeArea = {
     name: string;
@@ -16,7 +15,6 @@ type PracticeAreaClientProps = {
     litigationTitle: string;
     litigationAreas: PracticeArea[];
     learnMoreText: string;
-    contentBgImage?: string;
     headerText?: string;
 };
 
@@ -26,7 +24,6 @@ export default function PracticeAreaClient({
     litigationTitle,
     litigationAreas,
     learnMoreText,
-    contentBgImage,
     headerText,
 }: PracticeAreaClientProps) {
     const [selectedArea, setSelectedArea] = useState<PracticeArea | null>(null);
@@ -42,25 +39,7 @@ export default function PracticeAreaClient({
     return (
         <>
             {/* Content Section */}
-            <section
-                className="relative bg-white"
-                style={{ clipPath: "inset(0)" }}
-            >
-                {/* Background Image */}
-                {contentBgImage && (
-                    <div
-                        className="fixed inset-0 pointer-events-none z-0"
-                        aria-hidden="true"
-                    >
-                        <Image
-                            src={contentBgImage}
-                            alt=""
-                            fill
-                            className="object-cover opacity-[0.07]"
-                        />
-                    </div>
-                )}
-
+            <section className="relative">
                 <div className="container relative z-10 mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-32">
                     {/* Header Text */}
                     {headerText && (
@@ -89,7 +68,7 @@ export default function PracticeAreaClient({
                                 {corporateAreas.map((area, index) => (
                                     <div
                                         key={index}
-                                        className="group relative cursor-pointer py-8 transition-all duration-500 hover:bg-neutral-50"
+                                        className="group relative cursor-pointer py-8 "
                                         onClick={() => handleOpenSidebar(area)}
                                     >
                                         {/* Hover Accent */}

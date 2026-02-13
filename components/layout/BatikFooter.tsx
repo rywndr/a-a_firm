@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Footer from "./Footer";
+import Footer from "@/components/layout/Footer";
 
 export default function BatikFooter() {
     return (

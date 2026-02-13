@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Dictionary } from "@/dictionaries/types";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 
 type SidebarProps = {
     isOpen: boolean;
@@ -93,7 +93,7 @@ export default function Sidebar({ isOpen, onClose, lang, dict }: SidebarProps) {
                         {/* Background Pattern */}
                         <div className="absolute inset-0 bg-white">
                             <Image
-                                src="/images/sidebar-pattern.jpg"
+                                src="/images/patterns/sidebar.webp"
                                 alt=""
                                 fill
                                 className="object-cover opacity-40"

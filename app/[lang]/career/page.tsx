@@ -1,8 +1,9 @@
 import { getDictionary } from "@/utils/get-dictionary";
 import { getCanonicalUrl } from "@/utils/canonical";
 import Image from "next/image";
-import BatikFooter from "@/components/BatikFooter";
-import FadeIn, { FadeInHero } from "@/components/FadeIn";
+import BatikFooter from "@/components/layout/BatikFooter";
+import FadeIn, { FadeInHero } from "@/components/shared/FadeIn";
+import PageHero from "@/components/hero/PageHero";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -33,58 +34,26 @@ export default async function Career({
 
     return (
         <div className="min-h-screen">
-            {/* Hero Section */}
-            <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-screen">
-                {/* Background */}
-                <div className="absolute inset-0 -z-10 bg-black">
-                    <Image
-                        src="/images/backgrounds/career-main-bg.webp"
-                        alt="Batik Background"
-                        fill
-                        className="object-cover opacity-50"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
-                </div>
-
-                <div className="container mx-auto max-w-7xl px-6 md:px-12">
-                    <div className="max-w-4xl pt-32 pb-20">
-                        {/* Top line */}
-                        <FadeInHero delay={0.2} direction="left" distance={50}>
-                            <div className="mb-8 h-px w-full max-w-2xl bg-white/40" />
-                        </FadeInHero>
-
-                        {/* Main heading */}
-                        <FadeInHero delay={0.3} duration={0.8}>
-                            <h1 className="font-serif text-5xl font-light leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-                                {dict.career.title}
-                            </h1>
-                        </FadeInHero>
-
-                        {/* Sub */}
-                        <FadeInHero delay={0.5} duration={0.8}>
-                            <p className="mt-6 max-w-xl text-lg font-light italic leading-relaxed text-white/90 md:mt-8 md:text-xl lg:text-2xl">
-                                {dict.career.subtitle}
-                            </p>
-                        </FadeInHero>
-
-                        {/* Email */}
-                        <FadeInHero delay={0.7} duration={0.8}>
-                            <div className="mt-12 md:mt-16">
-                                <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
-                                    {dict.career.emailLabel}
-                                </p>
-                                <a
-                                    href={`mailto:${dict.career.email}`}
-                                    className="font-serif text-2xl font-light text-white transition-colors hover:text-white/80 md:text-3xl"
-                                >
-                                    {dict.career.email}
-                                </a>
-                            </div>
-                        </FadeInHero>
+            <PageHero
+                backgroundImage="/images/backgrounds/career-main-bg.webp"
+                title={dict.career.title}
+                subtitle={dict.career.subtitle}
+            >
+                {/* Email */}
+                <FadeInHero delay={0.7} duration={0.8}>
+                    <div className="mt-12 md:mt-16">
+                        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
+                            {dict.career.emailLabel}
+                        </p>
+                        <a
+                            href={`mailto:${dict.career.email}`}
+                            className="font-serif text-2xl font-light text-white transition-colors hover:text-white/80 md:text-3xl"
+                        >
+                            {dict.career.email}
+                        </a>
                     </div>
-                </div>
-            </section>
+                </FadeInHero>
+            </PageHero>
 
             {/* Content Section */}
             <section className="relative bg-white">

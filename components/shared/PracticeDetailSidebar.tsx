@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -50,10 +51,11 @@ export default function PracticeDetailSidebar({
     const isSingleArea = areas.length === 1;
     const singleArea = isSingleArea ? areas[0] : null;
 
-    // Placeholder for background image
     const sidebarBgImage = "/images/backgrounds/CONTENT-BG-4.webp";
 
-    return (
+    if (typeof window === "undefined") return null;
+
+    return createPortal(
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[70]">
@@ -164,6 +166,7 @@ export default function PracticeDetailSidebar({
                     </motion.aside>
                 </div>
             )}
-        </AnimatePresence>
+        </AnimatePresence>,
+        document.body,
     );
 }

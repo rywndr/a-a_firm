@@ -1,8 +1,9 @@
 import { getDictionary } from "@/utils/get-dictionary";
 import { getCanonicalUrl } from "@/utils/canonical";
 import Image from "next/image";
-import BatikFooter from "@/components/BatikFooter";
-import FadeIn, { FadeInHero } from "@/components/FadeIn";
+import BatikFooter from "@/components/layout/BatikFooter";
+import FadeIn from "@/components/shared/FadeIn";
+import PageHero from "@/components/hero/PageHero";
 import type { Metadata } from "next";
 
 const CONTENT_BG_IMAGE = "/images/backgrounds/CONTENT-BG.webp";
@@ -33,49 +34,17 @@ export default async function About({
 
     return (
         <div className="min-h-screen">
-            {/* Hero section */}
-            <section className="relative flex min-h-[85vh] items-center overflow-hidden md:min-h-screen">
-                <div className="absolute inset-0 -z-10 bg-black">
-                    <Image
-                        src="/images/backgrounds/batik-about-bg.webp"
-                        alt="Batik Background"
-                        fill
-                        className="object-cover opacity-50"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
-                </div>
-
-                <div className="container mx-auto max-w-7xl px-6 md:px-12">
-                    <div className="max-w-4xl pt-20">
-                        {/* Top line */}
-                        <FadeInHero delay={0.2} direction="left" distance={50}>
-                            <div className="mb-8 h-px w-full max-w-2xl bg-white/40" />
-                        </FadeInHero>
-
-                        {/* Main heading */}
-                        <FadeInHero delay={0.3} duration={0.8}>
-                            <h1 className="font-serif text-5xl font-light leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-                                {dict.about.title}
-                            </h1>
-                        </FadeInHero>
-
-                        {/* Sub */}
-                        <FadeInHero delay={0.5} duration={0.8}>
-                            <p className="mt-8 max-w-xl text-lg font-light italic leading-relaxed text-white/90 md:text-xl lg:text-2xl">
-                                {dict.about.subtitle}
-                            </p>
-                        </FadeInHero>
-                    </div>
-                </div>
-            </section>
+            <PageHero
+                backgroundImage="/images/backgrounds/batik-about-bg.webp"
+                title={dict.about.title}
+                subtitle={dict.about.subtitle}
+            />
 
             {/* Content */}
             <section className="relative bg-white [clip-path:inset(0)]">
                 {/* Top border */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
 
-                {/* Background Image Placeholder */}
                 {CONTENT_BG_IMAGE && (
                     <div
                         className="fixed inset-0 pointer-events-none z-0"
@@ -104,7 +73,7 @@ export default async function About({
                                 </div>
                             </FadeIn>
 
-                            {/* Main content - paragraphs */}
+                            {/* Main content */}
                             <div className="space-y-8">
                                 {dict.about.paragraphs.map(
                                     (paragraph, index) => (

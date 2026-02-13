@@ -106,78 +106,24 @@
             "title": "Industri yang Kami Layani",
             "description": "Keahlian kami mencakup berbagai industri, menyediakan solusi hukum yang disesuaikan untuk tantangan unik setiap sektor.",
             "list": [
-                {
-                    "name": "Pertambangan",
-                    "image": "/images/business-sectors/mining.webp"
-                },
-                {
-                    "name": "Minyak & Gas",
-                    "image": "/images/business-sectors/oil-gas.webp"
-                },
-                {
-                    "name": "Perbankan",
-                    "image": "/images/business-sectors/banking.webp"
-                },
-                {
-                    "name": "Energi & Energi Terbarukan",
-                    "image": "/images/business-sectors/energy-renewables.webp"
-                },
-                {
-                    "name": "Pertanahan & Properti",
-                    "image": "/images/business-sectors/land-property.webp"
-                },
-                {
-                    "name": "Makanan & Minuman",
-                    "image": "/images/business-sectors/fnb.webp"
-                },
-                {
-                    "name": "Pelayaran",
-                    "image": "/images/business-sectors/shipping.webp"
-                },
-                {
-                    "name": "FMCG",
-                    "image": "/images/business-sectors/fmcg.webp"
-                },
-                {
-                    "name": "Asuransi",
-                    "image": "/images/business-sectors/insurance.webp"
-                },
-                {
-                    "name": "Pertanian",
-                    "image": "/images/business-sectors/agriculture.webp"
-                },
-                {
-                    "name": "Pariwisata & Perhotelan",
-                    "image": "/images/business-sectors/leisure-hospitality.webp"
-                },
-                {
-                    "name": "Teknologi",
-                    "image": "/images/business-sectors/technology.webp"
-                },
-                {
-                    "name": "Kehutanan",
-                    "image": "/images/business-sectors/forestry.webp"
-                },
-                {
-                    "name": "Kesehatan",
-                    "image": "/images/business-sectors/healthcare.webp"
-                },
-                {
-                    "name": "Otomotif",
-                    "image": "/images/business-sectors/automotive.webp"
-                },
-                {
-                    "name": "Media & Hiburan",
-                    "image": "/images/business-sectors/media-entertainment.webp"
-                },
-                {
-                    "name": "Konstruksi",
-                    "image": "/images/business-sectors/construction.webp"
-                },
-                {
-                    "name": "Ritel",
-                    "image": "/images/business-sectors/retail.webp"
-                }
+                "Pertambangan",
+                "Minyak & Gas",
+                "Perbankan",
+                "Energi & Energi Terbarukan",
+                "Tanah & Properti",
+                "Makanan & Minuman",
+                "Pelayaran",
+                "FMCG",
+                "Asuransi",
+                "Pertanian",
+                "Rekreasi & Perhotelan",
+                "Teknologi",
+                "Kehutanan",
+                "Kesehatan",
+                "Otomotif",
+                "Media & Hiburan",
+                "Konstruksi",
+                "Ritel"
             ]
         },
         "litigation": {
