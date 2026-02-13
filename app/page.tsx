@@ -29,6 +29,9 @@ export const metadata: Metadata = {
             "AUDY & ANTONI Counsellors at Law - A trusted Indonesian law firm specializing in corporate law, litigation, and dispute resolution.",
         images: ["/images/backgrounds/batik-main-bg.webp"],
     },
+    alternates: {
+        canonical: "https://www.audyantonilaw.com/en",
+    },
 };
 
 export default function RootPage() {

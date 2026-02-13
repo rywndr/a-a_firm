@@ -93,7 +93,6 @@ export const metadata: Metadata = {
     //     yandex: "your-yandex-verification-code",
     // },
     alternates: {
-        canonical: siteUrl,
         languages: {
             en: `${siteUrl}/en`,
             id: `${siteUrl}/id`,

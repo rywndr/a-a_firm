@@ -1,7 +1,24 @@
 import { getDictionary } from "@/utils/get-dictionary";
+import { getCanonicalUrl } from "@/utils/canonical";
 import Image from "next/image";
 import BatikFooter from "@/components/BatikFooter";
 import FadeIn, { FadeInHero } from "@/components/FadeIn";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang: rawLang } = await params;
+    const lang = (rawLang === "id" ? "id" : "en") as "en" | "id";
+
+    return {
+        alternates: {
+            canonical: getCanonicalUrl(lang, "career"),
+        },
+    };
+}
 
 export default async function Career({
     params,

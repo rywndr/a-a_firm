@@ -1,8 +1,25 @@
 import { getDictionary } from "@/utils/get-dictionary";
+import { getCanonicalUrl } from "@/utils/canonical";
 import Image from "next/image";
 import BatikFooter from "@/components/BatikFooter";
 import FadeIn, { FadeInHero } from "@/components/FadeIn";
 import PracticeAreaClient from "@/components/PracticeAreaClient";
+import type { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang: rawLang } = await params;
+    const lang = (rawLang === "id" ? "id" : "en") as "en" | "id";
+
+    return {
+        alternates: {
+            canonical: getCanonicalUrl(lang, "practice-area"),
+        },
+    };
+}
 
 export default async function PracticeArea({
     params,

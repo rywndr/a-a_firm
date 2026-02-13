@@ -1,9 +1,26 @@
 import { getDictionary } from "@/utils/get-dictionary";
+import { getCanonicalUrl } from "@/utils/canonical";
 import Image from "next/image";
 import BatikFooter from "@/components/BatikFooter";
 import FadeIn, { FadeInHero } from "@/components/FadeIn";
+import type { Metadata } from "next";
 
 const CONTENT_BG_IMAGE = "/images/backgrounds/CONTENT-BG.webp";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+    const { lang: rawLang } = await params;
+    const lang = (rawLang === "id" ? "id" : "en") as "en" | "id";
+
+    return {
+        alternates: {
+            canonical: getCanonicalUrl(lang, "about-the-firm"),
+        },
+    };
+}
 
 export default async function About({
     params,

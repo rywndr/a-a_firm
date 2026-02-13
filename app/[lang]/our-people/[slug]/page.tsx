@@ -1,10 +1,12 @@
 import { getDictionary } from "@/utils/get-dictionary";
+import { getCanonicalUrl } from "@/utils/canonical";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import BatikFooter from "@/components/BatikFooter";
 import { FadeInHero } from "@/components/FadeIn";
 import { Dictionary, Partner } from "@/dictionaries/types";
+import type { Metadata } from "next";
 
 const CONTENT_BG_IMAGE = "/images/backgrounds/CONTENT-BG-2.webp";
 
@@ -12,6 +14,21 @@ const partnerImages: Record<string, string> = {
     "andelton-antoni": "/images/profiles/andelton-antoni.webp",
     "audy-rahmat": "/images/profiles/audy-rahmat.webp",
 };
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ lang: string; slug: string }>;
+}): Promise<Metadata> {
+    const { lang: rawLang, slug } = await params;
+    const lang = (rawLang === "id" ? "id" : "en") as "en" | "id";
+
+    return {
+        alternates: {
+            canonical: getCanonicalUrl(lang, `our-people/${slug}`),
+        },
+    };
+}
 
 const InfoCards = ({
     partner,
