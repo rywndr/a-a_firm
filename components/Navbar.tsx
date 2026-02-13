@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/Sidebar";
@@ -66,10 +67,15 @@ export default function Navbar({ lang, dict }: NavbarProps) {
                         href={`/${lang}`}
                         className={`relative z-50 flex items-end gap-2 transition-colors duration-300 md:gap-3 ${textColorClass}`}
                     >
-                        {/* A&A logo */}
-                        <span className="font-serif text-xl font-bold tracking-tight leading-none md:text-3xl">
-                            A&A
-                        </span>
+                        {/* Logo */}
+                        <Image
+                            src="/images/logo.png"
+                            alt="Audy & Antoni"
+                            width={48}
+                            height={48}
+                            className="h-12 w-auto md:h-14"
+                            priority
+                        />
 
                         {/* Firm name and subtitle */}
                         <div className="flex flex-col leading-none pb-0.5">

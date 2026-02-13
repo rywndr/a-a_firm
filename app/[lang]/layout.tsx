@@ -19,10 +19,10 @@ const playfair = Playfair_Display({
     subsets: ["latin"],
 });
 
-const siteUrl = null;
+const siteUrl = "https://www.audyantonilaw.com/en";
 
 export const metadata: Metadata = {
-    // metadataBase: new URL(siteUrl),
+    metadataBase: new URL(siteUrl),
     title: {
         default: "A&A Counsellors at Law | Audy & Antoni",
         template: "%s | A&A Counsellors at Law",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         alternateLocale: "id_ID",
-        // url: siteUrl,
+        url: siteUrl,
         siteName: "A&A Counsellors at Law",
         title: "A&A Counsellors at Law | Audy & Antoni",
         description:

@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "";
+const BASE_URL = "https://www.audyantonilaw.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const languages = ["en", "id"];
